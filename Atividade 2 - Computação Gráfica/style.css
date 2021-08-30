@@ -1,0 +1,401 @@
+/*Link de fonte do google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*=======Configurações Gerais========*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.section{
+    padding: 50px 0;
+}
+
+.dda, .bresenham, .circulo-simples, .ponto-medio, .equipe{
+    font-family: 'Poppins',sans-serif;
+}
+
+.dda .dda-content, .bresenham .bresenham-content, .circulo-simples .circulo-simples-content, .ponto-medio .ponto-medio-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .titulo{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.bresenham, .ponto-medio{
+    color: #fff;
+    background: #9aa220;
+}
+
+
+
+/*========Estilização da Header========*/
+.navbar{
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    /*background: #9aa220;*/
+    font-family: 'Poppins',sans-serif;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky{
+    padding: 15px 0;
+    background: #7a811a;
+}
+
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*-----LOGO-----*/
+.navbar .logo a{
+    margin-left: 95px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.navbar .logo span{
+    color: #9ea727;
+}
+
+.navbar.sticky .logo a{
+    color: #dde934;
+}
+
+.navbar.sticky .logo span{
+    color: #fff;
+}
+
+/*-----MENU-----*/
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    color:#fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover{
+    color: #b9c22c;
+}
+
+
+
+/*========Estilização da Home========*/
+.home{
+    display: flex;
+    /*background-color: black;*/
+    background: url(imagens/Banner.jpg) no-repeat center;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    font-family: 'Poppins',sans-serif;
+}
+
+.home .max-width{
+    margin: auto 0 auto 40px;
+}
+
+/*----Estilização dos textos da Home----*/
+.home .home-content .text-1{
+    font-size: 27px;
+    margin-left: 25px;
+    margin-bottom: -20px;
+    margin-top: 270px;
+}
+
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+
+.home .home-content .text-3{
+    font-size: 40px;
+    margin-right: 5px 0;
+    margin-top: -25px;
+}
+
+.home .home-content .text-3 span{
+    color: #e9fa34;
+    font-weight: 500;
+}
+
+.titulo{
+    margin-top: 10px;
+}
+
+/*----Estilização DDA----*/
+.dda .titulo{
+    color: #9aa220;
+}
+
+.dda .dda-content .left{
+    width:60%;
+    
+}
+
+.dda .dda-content .right{
+    width: 40%;
+}
+
+.dda .dda-content .right .text{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.dda .dda-content .right p{
+    text-align: justify;
+}
+
+/*----Estilização Bresenham----*/
+.bresenham .bresenham-content .left{
+    width:60%;
+}
+
+.bresenham .bresenham-content .right{
+    width: 40%;
+}
+
+.bresenham .bresenham-content .right .text{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.bresenham .bresenham-content .right p{
+    text-align: justify;
+}
+
+
+/*----Estilização Circulo Simples----*/
+.circulo-simples .titulo{
+    color: #9aa220;
+}
+
+.circulo-simples .circulo-simples .left{
+    width: 60%;
+}
+
+.circulo-simples .circulo-simples-content .right{
+    width: 40%;
+}
+
+.circulo-simples .circulo-simples-content .right .text{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.circulo-simples .circulo-simples-content .right p{
+    text-align: justify;
+}
+
+/*----Estilização Ponto Médio----*/
+.ponto-medio .ponto-medio .left{
+    width:60%;
+}
+
+.ponto-medio .ponto-medio-content .right{
+    width: 40%;
+}
+
+.ponto-medio .ponto-medio-content .right .text{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.ponto-medio .ponto-medio-content .right p{
+    text-align: justify;
+}
+
+/*----Estilização Equipe----*/
+.equipe .titulo{
+    color: #9aa220;
+}
+
+.equipe .card{
+    background: #9aa220;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.1s ease;
+    width: 250px;
+    height: 400px;
+    display: inline-block;
+    color: #fff;
+          
+}
+
+.equipe .grupo{
+    margin-left: 180px;
+    padding-bottom: 50px;
+}
+
+.equipe .card #card1{
+    margin-left: 250px;
+}
+
+.equipe .card:hover{
+    background: #dde934;
+    color: #9aa220;
+}
+
+.equipe .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.equipe .card:hover .box{
+    transform: scale(1.05);
+}
+
+.equipe .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+.equipe .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #dde933;
+    transition: all 0.3s ease;
+}
+
+.equipe .card:hover img{
+    border-color: #9aa220;
+}
+
+/*Estilização Formulários*/
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: -150px;
+}
+
+.input-field{
+    display: flex;
+    flex-direction: row;
+}
+
+.form-right, 
+.form-left{
+    margin: 5px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-field{
+    border: 1px dotted #9aa220;
+    padding: 10px 0 0 5px;
+    margin: 8px 0 0 5px;
+}
+
+.form-btn{
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+    margin-top: 15px;
+}
+
+.generate,
+.clear{
+    padding: 5px 25px;
+    border: none;
+    border-radius: 3px;
+    transition: all .2s;
+}
+
+.generate{
+    background-color: #9aa220;
+    color: #ffffff;
+}
+
+.generate-colorBg{
+    background-color: #ffffff;
+    color: #9aa220;
+}
+
+.clear{
+    background-color: #ffffff;
+    color: #9aa220;
+    border: 1px dashed #9aa220;
+}
+
+.clear-colorBg{
+    background-color: #9aa220;
+    color: #ffffff;
+    border: 1px dashed #ffffff;
+}
+
+.generate:hover,
+.clear:hover{
+    opacity: .8;
+}
+
+.form-button-circle{
+    margin: 15px 0 0 40px;
+}
+
+/*Estilização SVG - Quadro*/
+.svg-canva{
+    box-shadow: 0px 0px 20px #9aa220;
+    display: flex;
+    margin: 50px 150px 50px 0;
+    border-radius: 7px;
+}
+
+.svg-canva-color{
+    box-shadow: 0px 0px 20px #000000;
+    display: flex;
+    margin: 50px 150px 50px 0;
+    border-radius: 7px;
+}
+

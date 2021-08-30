@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6e9a8a0e96.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    
+    <title>Atividade 2 - CG</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="">Computação<span>Gráfica</span></a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="#dda">DDA</a></li>
+                    <li><a href="#bresenham">Bresenham</a></li>
+                    <li><a href="#circulo-simples">Círculo Simples</a></li>
+                    <li><a href="#ponto-medio">Ponto Médio</a></li>
+                    <li><a href="#equipe">Equipe</a></li>
+                </ul>
+                
+            </div>
+        </div>        
+    </header>
+
+    <!--Seção Home da tela Principal-->
+    <section class="home" id="home">
+        <div class="max-width">
+            <!--Texto com js na tela-->
+            <div class="home-content">
+                <div class="text-1">Website criado para desenvolvimento de</div>
+                <div class="text-2">Retas e Círculos</div>
+                <div class="text-3">com Algoritmo <span class="typing">DDA</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!--Seção DDA-->
+    <section class="dda" id="dda">
+        <div class="max-width">
+            <h2 class="titulo">Algoritmo DDA</h2>
+            <div class="dda-content">
+                <div class="column left">
+
+                    <form class="form-container">
+                        <div class="input-field">
+    
+                            <div class="form-left">
+                                <div class="">
+                                    <label>Posição x1</label>
+                                    <input type="text" id="x0" class="text-field"
+                                        placeholder="X inicial">
+                                </div>
+                                <div class="">
+                                    <label>Posição y1</label>
+                                    <input type="text" id="y0" class="text-field"
+                                        placeholder="Y inicial">
+                                </div>
+                            </div>
+
+                            <div class="form-right">
+                                <div class="">
+                                    <label>Posição x2</label>
+                                    <input type="text" id="x1" class="text-field"
+                                        placeholder="X final">
+                                </div>
+                                <div class="">
+                                    <label>Posição y2</label>
+                                    <input type="text" id="y1" class="text-field"
+                                        placeholder="Y final">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-btn">
+                            <button type="button" onclick="DDA()" class="generate">Gerar</button>
+                            <button type="button" onclick="clearquadro1()" class="clear">Limpar</button>
+                        </div>
+                    </form>
+
+                    <div class="svg-canva">
+                        <svg id=quadro class="svg-frame" width="500" height="500">
+                        </svg>
+                    </div>
+                </div>
+                <div class="coluna right">
+                    <div class="text">
+                        <p>Algoritimo DDA (Digital Differential Analyser), Baseiase na aplicação direta das fórmulas que descrevem uma reta no plano.
+                            -Assim, para traçar uma reta que vai do ponto P1 ao P2, podemos pensar no seguinte algoritmo:<br/>
+                             <br/>1. Pinta-se o pixel do ponto P1, isto é, o pixel de coordenadas
+                             (x1,y1), e atribuem-se às variáveis de trabalho (x,y) os valores de (x1,y1).
+                             <br/>2. Dá-se o próximo passo: vai ao pixel seguinte (x,y), onde x<- x+1 e y <- y+m e pinta-se esse novo pixel.
+                             <br/>3. Repete o passo 2 até que o ponto P2 seja alcançado.
+                             O DDA é um típico algoritmo incremental. Algoritmos incrementais são aqueles em que uma das variáveis é
+                             obtida apenas incrementando o seu valor, por exemplo X = X + 1, e a outra é calculada por alguma regra a partir da primeira.</p>
+
+                        <p> - O DDA possui algumas desvantagens, como: <br/>
+                        <br/>O consumo de muito tempo, devido as funções de arredondamento.
+                        <br/>Outra desvantagem é que o passo em x é igual a 1 (não existe fração do pixel).
+                        <br/>Há outros comportamentos indesejados para ângulos próximos a 0° e 90°, com a reta quase horizontal ou quase vertical.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--Seção Bresenham-->
+    <section class="bresenham" id="bresenham">
+        <div class="max-width">
+            <h2 class="titulo">Algoritmo Bresenham</h2>
+            <div class="bresenham-content">
+                <div class="column left">
+
+                    <form class="form-container">
+                        <div class="input-field">
+    
+                            <div class="form-left">
+                                <div class="">
+                                    <label>Posição x1</label>
+                                    <input type="text" id="x00" class="text-field"
+                                        placeholder="X inicial">
+                                </div>
+                                <div class="">
+                                    <label>Posição y1</label>
+                                    <input type="text" id="y00" class="text-field"
+                                        placeholder="Y inicial">
+                                </div>
+                            </div>
+
+                            <div class="form-right">
+                                <div class="">
+                                    <label>Posição x2</label>
+                                    <input type="text" id="x11" class="text-field"
+                                        placeholder="X final">
+                                </div>
+                                <div class="">
+                                    <label>Posição y2</label>
+                                    <input type="text" id="y11" class="text-field"
+                                        placeholder="Y final">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-btn">
+                            <button type="button" onclick="bresenham()" class="generate generate-colorBg">Gerar</button>
+                            <button type="button" onclick="clearquadro2()" class="clear clear-colorBg">Limpar</button>
+                        </div>
+                    </form>
+                  
+                    <div class="svg-canva-color">
+                        <svg id=quadro2 class="svg-frame" width="500" height="500">
+                       </svg>
+                    </div>
+
+                </div>
+                <div class="column right">
+                    <div class="text">
+                        <p>O algoritmo de Bresenham (também chamado de algoritmo do Ponto Médio) baseia-se no argumento de que um segmento de reta, ao ser plotado, 
+                            deve ser contínuo, ou melhor, os pixels que compõem um segmento de reta devem ser vizinhos.<br/>
+                             – Será analisado o caso de m menor que 1, pois para m>=1, basta inverter as coordenadas x e y.<br/>
+                            - O ponto de partida é a seguinte pergunta: se m menor que 1 e
+                            dado um ponto na reta, o próximo ponto é (x+1,y) ou (x+1, y+1)? <br/>
+                            – O algoritmo de Bresenham responde a essa questão calculando um valor (p) para cada pixel, e passando para o pixel seguinte,
+                            até alcançar o último pixel do segmento da reta.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Seção Círculo Simples-->
+    <section class="circulo-simples" id="circulo-simples">
+        <div class="max-width">
+            <h2 class="titulo">Algoritmo Círculo Simples</h2>
+            <div class="circulo-simples-content">
+                <div class="column left">
+
+                    <form class="form-container">
+						<div class="input-field">
+
+							<div class="form-left">
+								<div class="">
+									<label>Posição x</label>
+									<input type="text" id="x" class="text-field"
+										placeholder="X do centro">
+								</div>
+								<div class="">
+									<label>Posição y</label>
+									<input type="text" id="y" class="text-field"
+										placeholder="Y do centro">
+								</div>
+							</div>
+							<div class="form-right">
+								<div class="">
+									<label>Raio</label>
+									<input type="text" id="r" class="text-field"
+										placeholder="raio">
+								</div>
+								<div class="form-button-circle">
+									<button type="button" onclick="circle()" class="generate">Gerar</button>
+									<button type="button" onclick="clearquadro3()" class="clear">Limpar</button>
+								</div>							
+							</div>
+						</div>
+					</form>
+
+                    <div class="svg-canva">
+                        <svg id=quadro3 class="svg-frame" width="500" height="500">
+                        </svg>
+                    </div>
+
+                </div>
+                <div class="column right">
+                    <div class="text">
+                        <p>O círculo é definido como um conjunto de pontos que estão a uma mesma distâncias de um ponto. <br/>
+                            – A distância é o raio e o ponto equidistante é o centro do círculo
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Seção Ponto Médio-->
+    <section class="ponto-medio" id="ponto-medio">
+        <div class="max-width">
+            <h2 class="titulo">Algoritmo Ponto Médio</h2>
+            <div class="ponto-medio-content">
+                <div class="column left">
+
+                    <form class="form-container">
+						<div class="input-field">
+
+							<div class="form-left">
+								<div class="">
+									<label>Posição x</label>
+									<input type="text" id="xcentre" class="text-field"
+										placeholder="X do centro">
+								</div>
+								<div class="">
+									<label>Posição y</label>
+									<input type="text" id="ycentre" class="text-field"
+										placeholder="Y do centro">
+								</div>
+							</div>
+							<div class="form-right">
+								<div class="">
+									<label>Raio</label>
+									<input type="text" id="r1" class="text-field"
+										placeholder="raio">
+								</div>
+								<div class="form-button-circle">
+									<button type="button" onclick="midPointCircleDraw()" class="generate generate-colorBg">Gerar</button>
+									<button type="button" onclick="clearquadro4()" class="clear clear-colorBg">Limpar</button>
+								</div>							
+							</div>
+						</div>
+					</form>
+
+                    <div class="svg-canva-color">
+                        <svg id=quadro4 class="svg-frame" width="500" height="500">
+                       </svg>
+                    </div>
+
+                </div>
+                <div class="column right">
+                    <div class="text">
+                        <p>Algoritmo do ponto médio para círculos <br/>
+                            • O algoritmo do ponto médio para círculos foi desenvolvido com o objetivo de otimizar o traçado desse tipo de objeto. <br/>
+                            1. Elege-se como ponto inicial (0,r) que é plotado nos oito
+                            octantes, e ainda calcula-se uma variável auxiliar p = 5/4 – r (ou simplesmente p=1-r).<br/>
+                            2. Incrementa-se x.<br/>
+                            3. Se p for negativo, então calcula-se um novo p=p+2x+1; caso contrário, decrementa-se y e calcula-se p=p+2x+1–2y.<br/>
+                            4. Plota-se o novo ponto (x,y) nos oito octantes.<br/>
+                            5. Os passos 2 e 4 são repetidos enquanto x menor que y.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Seção Equipe-->
+    <section class="equipe" id="equipe">
+        <div class="max-width">
+            <h2 class="titulo">Equipe</h2>
+             <div class="grupo">
+                <div class="card">
+                    <div class="box">
+                        <a href="https://www.instagram.com/igorvcarvalho/" target="_blank">
+                            <img src="imagens/fotoperfiligor.png" alt="">
+                        </a>
+                        <div class="text">Igor Vinícius</div>
+                        <p>Estudante de Engenharia da Computação - Univasf</p>
+                    </div>             
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <a href="https://www.instagram.com/marcossfillipe/" target="_blank">
+                            <img src="imagens/perfilmarcola.jpeg" alt="">
+                        </a>
+                        <div class="text">Marcos Filipe</div>
+                        <p>Estudante de Engenharia da Computação - Univasf</p>
+                        </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <a href="https://www.instagram.com/p.lucasb/" target="_blank">
+                            <img src="imagens/fotoperfilpaulo.png" alt="">
+                        </a>
+                        <div class="text">Paulo Lucas</div>
+                        <p>Estudante de Engenharia da Computação - Univasf</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+               
+            
+        
+    </section>
+    <script src="main.js"></script>
+    <script src="index.js"></script>
+</body>
+
+
+</script>
+</html>
